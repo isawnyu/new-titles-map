@@ -9,6 +9,9 @@ name = "pypi"
 
 flask = "*"
 gunicorn = "*"
+"psycopg2" = "*"
+flask-sqlalchemy = "*"
+flask-migrate = "*"
 
 
 [dev-packages]
