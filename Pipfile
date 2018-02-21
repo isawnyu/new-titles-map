@@ -7,12 +7,12 @@ name = "pypi"
 
 [packages]
 
-flask = "*"
+Flask = "*"
 gunicorn = "*"
-"psycopg2" = "*"
-flask-sqlalchemy = "*"
-flask-migrate = "*"
-flask-script = "*"
+Flask-SQLAlchemy = "*"
+Flask-Migrate = "*"
+Flask-Script = "*"
+"psycopg2-binary" = "*"
 
 
 [dev-packages]
