@@ -62,13 +62,13 @@ for ( var i = 0; i < books.length; ++i )
             '<a href="' + bobcatLink + '" target="_blank">View in NYU catalog</a>' + '<br/>' +
             pleiadesLink + '<br/>' +
             '<b>Region:</b> ' + books[i].region + ' <b>Location:</b> ' + books[i].location + '<br/>' +
-            '<b>Representative coordinates:</b> ' + books[i].lat + ',' + books[i].lng + '</br>')
+            '<b>Representative coordinates:</b> ' + books[i].latitude + ',' + books[i].longitude + '</br>')
     
-    if (books[i].lat != "" || books[i].lng != "" ) { 
-        var m = L.marker( [books[i].lat, books[i].lng], {icon: myIcon} )
+    if (books[i].latitude != "" || books[i].longitude != "" ) { 
+        var m = L.marker( [books[i].latitude, books[i].longitude], {icon: myIcon} )
                   .bindPopup( popup, {minWidth: 400} );
     } else {
-        console.log(books[i].book + ' does not have correct lat-long information.')
+        console.log(books[i].book + ' does not have correct.latitude-long information.')
     }
 
   markerClusters.addLayer( m );
