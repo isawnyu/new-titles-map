@@ -27,7 +27,7 @@ class NewTitles(db.Model):
         self.latitute = latitute
         self.longitude = longitude
         self.bsn = bsn
-        
-
+    
+    
     def __repr__(self):
         return '<id {}>'.format(self.id)
