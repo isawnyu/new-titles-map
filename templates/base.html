@@ -24,13 +24,15 @@
       
       <title>{% block title %}{% endblock %}</title>
     {% endblock %}
+    {% block data %}
+    {% endblock %}
   </head>
   <body>
     <div id="content">{% block content %}{% endblock %}</div>
     <div id="footer">
       {% block footer %}
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/books.js') }}"></script>
+<!--    <script src="{{ url_for('static', filename='js/books.js') }}"></script>-->
     <script src="{{ url_for('static', filename='js/marc-pleiades.js') }}"></script>
       {% endblock %}
     </div>
