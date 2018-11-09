@@ -4,10 +4,17 @@
     var books = {{ result|tojson|safe }};
 </script>
 {% endblock %}
-{% block title %}ISAW New Titles Map{% endblock %}
+{% block title %}ISAW New Titles Map {{ period }}{% endblock %}
 {% block content %}
     <div class="container jumbotron">
-        <h1>ISAW Library New Titles Map</h1>
+        <h1 style="text-align: center;">ISAW Library New Titles Map {%if period %}| {{period }} {% endif %}</h1>
         <div id="map" style="margin: 0 auto; max-width:800px; min-height: 500px; border: 1px solid #AAA;"></div>
-        </div>
+    </div>
+    <div class="month_nav" style="text-align: center;">
+      <a href="{{ url_for('titles_by_month', year=prev_year,
+            month=prev_month) }}">Previous</a> | <a href="{{ url_for('titles_by_month', year=next_year,
+                  month=next_month) }}">Next</a>
+    <div>
 {% endblock %}
+
+{{ url_for('post_blueprint.get_post', year=year, month=month, title=title)}}
