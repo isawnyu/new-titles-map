@@ -67,7 +67,20 @@ def titles_by_month(year, month):
     cols = ['bsn', 'latitude', 'longitude', 'date']
     data = NewTitles.query.filter(extract('year', NewTitles.date) == year).filter(extract('month', NewTitles.date) == month).all()
     result = [{col: str(getattr(d, col)) for col in cols} for d in data]
-    return render_template('index.html', result=result, period='{} {}'.format(calendar.month_name[int(month)], year), prev_year=prev_date.year, prev_month=prev_date.month, next_year=next_date.year, next_month=next_date.month)
+    return render_template('index.html', result=result, period='{} {}'.format(calendar.month_name[int(month)], year), year=year, month=month, prev_year=prev_date.year, prev_month=prev_date.month, next_year=next_date.year, next_month=next_date.month)
+
+@app.route('/grid/<year>/<month>')
+def title_grid_by_month(year, month):
+    date = datetime(year=int(year), month=int(month), day=1)
+    prev_date = _get_rel_date(date, -1)
+    next_date = _get_rel_date(date, 1)
+
+    cols = ['bsn', 'latitude', 'longitude', 'date']
+    data = NewTitles.query.filter(extract('year', NewTitles.date) == year).filter(extract('month', NewTitles.date) == month).all()
+    result = [{col: str(getattr(d, col)) for col in cols} for d in data]
+    print(result)
+    return render_template('grid.html', result=result, period='{} {}'.format(calendar.month_name[int(month)], year), year=year, month=month, prev_year=prev_date.year, prev_month=prev_date.month, next_year=next_date.year, next_month=next_date.month)
+
 
 
 if __name__ == '__main__':

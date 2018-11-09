@@ -14,8 +14,8 @@
     <div class="month_nav" style="text-align: center;">
       <a href="{{ url_for('titles_by_month', year=prev_year,
             month=prev_month) }}">Previous</a> | <a href="{{ url_for('titles_by_month', year=next_year,
-                  month=next_month) }}">Next</a>
+                  month=next_month) }}">Next</a><br>
+                  <p style="text-align: center;"><a href="{{ url_for('title_grid_by_month', year=year,
+                        month=month) }}">Show Grid</a></p>
     <div>
 {% endblock %}
-
-{{ url_for('post_blueprint.get_post', year=year, month=month, title=title)}}
