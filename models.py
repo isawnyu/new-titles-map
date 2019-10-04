@@ -1,7 +1,6 @@
 from app import db
 from sqlalchemy.dialects.postgresql import JSON
 
-
 class NewTitles(db.Model):
     __tablename__ = 'newtitles'
 
@@ -15,7 +14,6 @@ class NewTitles(db.Model):
     longitude = db.Column(db.Numeric)
     bsn = db.Column(db.String(7), nullable=False)
 
-    
     def __init__(self, id, date, precision_code, region, location, pleiades_id, latitute, longitude, bsn):
         self.self = self
         self.id = id
@@ -27,7 +25,6 @@ class NewTitles(db.Model):
         self.latitute = latitute
         self.longitude = longitude
         self.bsn = bsn
-    
     
     def __repr__(self):
         return '<id {}>'.format(self.id)

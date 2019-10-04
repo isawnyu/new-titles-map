@@ -7,15 +7,15 @@
 {% block title %}ISAW New Titles Map {{ period }}{% endblock %}
 {% block content %}
     <div class="container jumbotron">
-        <h1 style="text-align: center;">ISAW Library New Titles Map</h1>
-        {%if period %}<h2 style="text-align: center;">{{period }}</h2>{% endif %}
-        <div id="map" style="margin: 0 auto; max-width:800px; min-height: 500px; border: 1px solid #AAA;"></div>
+        <h1>ISAW Library New Titles Map</h1>
+        {%if period %}<h2>{{period }}</h2>{% endif %}
+        <div id="map"></div>
     </div>
-    <div class="month_nav" style="text-align: center;">
+    <div class="month_nav">
       <a href="{{ url_for('titles_by_month', year=prev_year,
             month=prev_month) }}">Previous</a> | <a href="{{ url_for('titles_by_month', year=next_year,
                   month=next_month) }}">Next</a><br>
-                  <p style="text-align: center;"><a href="{{ url_for('title_grid_by_month', year=year,
+                  <p><a href="{{ url_for('title_grid_by_month', year=year,
                         month=month) }}">Show Grid</a></p>
     <div>
 {% endblock %}
